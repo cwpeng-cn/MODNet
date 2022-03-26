@@ -36,7 +36,7 @@ if __name__ == '__main__':
         print('Cannot find the ONXX model: {0}'.format(args.model_path))
         exit()
 
-    ref_size = 512
+    ref_size = 384
 
 
     # Get x_scale_factor & y_scale_factor to resize image
