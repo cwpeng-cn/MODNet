@@ -14,20 +14,23 @@ Example:
 """
 
 import os
-import argparse
+import sys
+sys.path.append(os.path.abspath(os.getcwd()))
 
+print(os.path.abspath(os.getcwd()))
+
+import argparse
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
-
-from onnx import modnet_onnx
+import modnet_onnx
 
 if __name__ == '__main__':
     # define cmd arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument('--ckpt-path', default="../pretrained/modnet_photographic_portrait_matting.ckpt", type=str, required=False,
+    parser.add_argument('--ckpt-path', default="./pretrained/modnet_photographic_portrait_matting.ckpt", type=str, required=False,
                         help='path of the checkpoint that will be converted')
-    parser.add_argument('--output-path', default="../pretrained/modnet_photographic_portrait_matting.onnx", type=str, required=False, help='path for saving the ONNX model')
+    parser.add_argument('--output-path', default="./pretrained/modnet_photographic_portrait_matting.onnx", type=str, required=False, help='path for saving the ONNX model')
     args = parser.parse_args()
 
     # check input arguments
