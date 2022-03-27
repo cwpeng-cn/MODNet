@@ -122,6 +122,7 @@ if __name__ == '__main__':
     start_time = time.time()
     for i in range(100):
         _, _, matte = modnet(im.cuda() if torch.cuda.is_available() else im, True)
+        print(i)
     print("100次推理pytorch耗时", (time.time() - start_time) / 100)
 
     # resize and save matte
