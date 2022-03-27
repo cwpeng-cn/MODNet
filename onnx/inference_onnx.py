@@ -98,7 +98,7 @@ if __name__ == '__main__':
     output_name = session.get_outputs()[0].name
     print("开始测速>>>")
     start_time = time.time()
-    for i in range(10):
+    for i in range(100):
         result = session.run([output_name], {input_name: im})
     print("100次推理onnx耗时:", (time.time() - start_time) / 100)
 
